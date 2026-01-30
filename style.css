@@ -1,35 +1,141 @@
-/* Estilos para el encabezado ajustado */
-.titulo-boda {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    margin: 5px 0;
-    font-weight: 400;
-    text-align: center;
+/* 1. RESET Y AJUSTES BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.fecha-linea {
-    white-space: nowrap; /* Impide que la fecha se divida en dos líneas */
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #fdfdfd;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita que la web baile hacia los lados */
 }
 
-/* Ajuste específico para que en móviles quepa todo */
-@media (max-width: 480px) {
-    .titulo-boda {
-        font-size: 1.4rem;
-    }
-    .fecha-linea {
-        font-size: 1.25rem; /* Un pelín más pequeña si la pantalla es muy estrecha */
-        letter-spacing: -0.5px;
-    }
+/* 2. CABECERA TIPO PÓSTER (Texto sobre imagen) */
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 85vh; /* Ocupa casi toda la altura de la pantalla inicial */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-/* Estilo para la foto principal */
-.foto-principal {
+.foto-hero {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* La foto se adapta sin deformarse */
+    z-index: 1;
+}
+
+/* Capa de contraste para que el texto se lea mejor */
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 85vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 0; /* Asegura que no haya hueco arriba */
+}
+
+.overlay-text {
+    position: relative;
+    z-index: 3;
     text-align: center;
     padding: 20px;
 }
-.foto-principal img {
-    max-width: 100%;
-    height: auto;
+
+/* 3. TIPOGRAFÍAS DEL ENCABEZADO */
+.fuente-elegante {
+    font-family: 'Alex Brush', cursive;
+    font-size: 4.5rem;
+    color: #ffffff; /* Texto blanco para resaltar sobre la foto */
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5); /* Sombra para legibilidad */
+    font-weight: 400;
+}
+
+.nombres-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: #ffffff;
+    margin: 10px 0;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    font-weight: 700;
+}
+
+.fecha-linea {
+    white-space: nowrap !important; /* La fecha no se rompe */
+    display: block;
+}
+
+/* 4. SECCIONES (Restaurando el estilo original) */
+section {
+    padding: 80px 20px;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#historia, #rsvp {
+    background-color: #f4f7f4; /* Fondo verde eucalipto suave */
+    max-width: 100%; /* El fondo cubre todo el ancho */
+}
+
+h2 {
+    font-family: 'Alex Brush', cursive;
+    font-size: 3.5rem;
+    color: #8fa38f;
+    margin-bottom: 25px;
+}
+
+/* 5. MAPA Y DETALLES */
+.mapa-contenedor {
     border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin-top: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* 6. INFORMACIÓN EXTRA (Transporte/Hoteles) */
+.info-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 850px;
+    margin: 30px auto 0;
+}
+
+.info-item {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    flex: 1;
+    min-width: 280px;
+    border: 1px solid #eef2ee;
+}
+
+/* 7. PIE DE PÁGINA */
+footer {
+    padding: 50px;
+    background: #ffffff;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+/* 8. AJUSTES PARA MÓVIL */
+@media (max-width: 600px) {
+    .hero-container { height: 70vh; }
+    .fuente-elegante { font-size: 2.8rem !important; }
+    .nombres-titulo { font-size: 2.8rem; }
+    .fecha-linea { font-size: 2rem !important; }
+    
+    h2 { font-size: 2.8rem; }
 }
