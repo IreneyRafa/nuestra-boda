@@ -108,3 +108,27 @@ footer {
         font-size: 1.5rem !important;
     }
 }
+/* Estilo para los títulos del encabezado */
+.titulo-boda {
+    font-size: 1.8rem;
+    margin: 5px 0;
+    font-weight: 400;
+    display: block;
+}
+
+/* Fuerza a que la fecha no salte de línea */
+.fecha-linea {
+    white-space: nowrap; 
+}
+
+/* Ajustes específicos para móviles (pantallas de menos de 480px) */
+@media (max-width: 480px) {
+    .titulo-boda {
+        font-size: 1.4rem; /* Bajamos un poco el tamaño para que quepa */
+    }
+    
+    .fecha-linea {
+        font-size: 1.2rem; /* Si aún así no cabe, la fecha bajará un pelín más */
+        letter-spacing: -0.5px; /* Junta un poquito las letras para ganar espacio */
+    }
+}
