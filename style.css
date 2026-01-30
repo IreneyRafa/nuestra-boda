@@ -95,3 +95,35 @@ footer {
     flex: 1;
     min-width: 250px;
 }
+/* Estilo general para los títulos del encabezado */
+.titulo-ajustable {
+    font-family: 'Playfair Display', serif;
+    font-size: 6vw; /* Tamaño basado en el ancho de la pantalla */
+    max-size: 45px; /* Límite para que en ordenador no sea gigante */
+    margin: 10px 0;
+    text-align: center;
+    font-weight: 700;
+}
+
+/* Regla de oro para la fecha */
+.fecha-unica {
+    white-space: nowrap; /* Prohibido saltar de línea */
+    font-size: 5.5vw;    /* Un pelín más pequeña para asegurar que quepa */
+}
+
+/* Ajuste para pantallas grandes (Ordenadores) */
+@media (min-width: 800px) {
+    .titulo-ajustable {
+        font-size: 2.5rem;
+    }
+    .fecha-unica {
+        font-size: 2.2rem;
+    }
+}
+
+/* Ajuste para pantallas muy pequeñas (Móviles antiguos) */
+@media (max-width: 400px) {
+    .fecha-unica {
+        font-size: 6vw; /* Se ajusta dinámicamente */
+    }
+}
