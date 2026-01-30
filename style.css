@@ -1,95 +1,35 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Lato', sans-serif;
-    background-color: #fdfdfd; 
-    color: #333;
-    line-height: 1.6;
+/* Estilos para el encabezado ajustado */
+.titulo-boda {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin: 5px 0;
+    font-weight: 400;
     text-align: center;
 }
 
-/* HEADER: Fondo blanco como pediste pero con el espaciado original */
-header {
-    background-color: #ffffff;
-    padding: 60px 20px;
-}
-
-.fuente-elegante {
-    font-family: 'Alex Brush', cursive;
-    font-size: 3.5rem;
-    color: #8fa38f;
-    font-weight: 400;
-}
-
-.nombres-titulo {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    color: #4a5d4a;
-    margin: 15px 0;
-}
-
 .fecha-linea {
-    white-space: nowrap !important;
-    display: block;
+    white-space: nowrap; /* Impide que la fecha se divida en dos líneas */
 }
 
-/* FOTO PRINCIPAL: Restaurada */
+/* Ajuste específico para que en móviles quepa todo */
+@media (max-width: 480px) {
+    .titulo-boda {
+        font-size: 1.4rem;
+    }
+    .fecha-linea {
+        font-size: 1.25rem; /* Un pelín más pequeña si la pantalla es muy estrecha */
+        letter-spacing: -0.5px;
+    }
+}
+
+/* Estilo para la foto principal */
 .foto-principal {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto 40px;
-    padding: 0 20px;
+    text-align: center;
+    padding: 20px;
 }
-
 .foto-principal img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-/* SECCIONES: Con el fondo suave que tenían */
-section {
-    padding: 60px 20px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-#historia, #rsvp {
-    background-color: #f4f7f4; /* El verde suave de fondo */
-    max-width: 100%; /* Para que el fondo cubra todo el ancho */
-}
-
-h2 {
-    font-family: 'Alex Brush', cursive;
-    font-size: 3.5rem;
-    color: #8fa38f;
-    margin-bottom: 20px;
-}
-
-.info-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.info-item {
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 12px;
-    flex: 1;
-    min-width: 280px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-/* AJUSTE MÓVIL PARA LA FECHA */
-@media (max-width: 480px) {
-    .fuente-elegante { font-size: 2.2rem !important; }
-    .nombres-titulo { font-size: 2.2rem; }
-    .fecha-linea { font-size: 1.8rem !important; }
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
