@@ -127,3 +127,34 @@ footer {
         font-size: 6vw; /* Se ajusta dinámicamente */
     }
 }
+
+/* Título principal (Nombres) */
+.titulo-ajustable {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #4a5d4a;
+    margin: 5px 0;
+    font-weight: 700;
+}
+
+/* La fuente caligráfica para "Nos casamos" y la Fecha */
+.fuente-elegante {
+    font-family: 'Alex Brush', cursive !important;
+    font-size: 3.5rem !important; /* La caligrafía suele necesitar ser más grande para leerse bien */
+    color: #8fa38f;
+    font-weight: 400;
+}
+
+/* Fuerza a que la fecha no salte de línea y ajuste tamaño en móvil */
+.fecha-linea {
+    white-space: nowrap !important;
+}
+
+@media (max-width: 480px) {
+    .fuente-elegante {
+        font-size: 2.2rem !important; /* Ajuste para que la fecha quepa en una línea en el móvil */
+    }
+    .titulo-ajustable {
+        font-size: 1.8rem;
+    }
+}
