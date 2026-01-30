@@ -95,3 +95,16 @@ footer {
     flex: 1;
     min-width: 250px;
 }
+/* Ajuste de tamaño para los títulos del encabezado */
+.titulo-boda {
+    font-size: 1.8rem !important; /* Más pequeño que el tamaño estándar */
+    margin: 5px 0;                /* Menos separación entre líneas */
+    font-weight: 400;             /* Menos grueso para que sea más fino */
+}
+
+/* En móviles se verá un pelín más pequeño todavía para que no se corte */
+@media (max-width: 600px) {
+    .titulo-boda {
+        font-size: 1.5rem !important;
+    }
+}
