@@ -124,10 +124,26 @@ h2 {
 
 /* 7. PIE DE PÁGINA */
 footer {
-    padding: 50px;
-    background: #ffffff;
+    padding: 40px;
+    background: #ffffff; /* O el color que prefieras */
     color: #aaa;
     font-size: 0.9rem;
+    text-align: center; /* ESTO CENTRA EL TEXTO "HECHO CON ❤️" */
+    width: 100%;
+	
+}
+/* 2. ELIMINAR ESPACIO SOBRANTE BAJO EL FORMULARIO */
+#rsvp {
+    padding-bottom: 0px; /* Reducimos el espacio de la sección rsvp */
+}
+
+#rsvp iframe {
+    margin-bottom: -10px; /* Ajuste fino para que lo siguiente suba un poco */
+    display: block;
+}
+
+#info-extra {
+    padding-top: 20px; /* Reducimos el espacio superior de esta sección */
 }
 
 /* 8. AJUSTES PARA MÓVIL */
