@@ -155,3 +155,58 @@ footer {
     
     h2 { font-size: 2.8rem; }
 }
+/* --- ESTILO CONTADOR EUCALIPTO --- */
+#contador-boda {
+    padding: 60px 20px;
+    background-color: #ffffff; /* Blanco para que resalte entre el Hero y la Historia */
+    text-align: center;
+}
+
+.frase-espera {
+    font-family: 'Alex Brush', cursive;
+    font-size: 2.2rem;
+    color: #8fa38f; /* Tu verde eucalipto */
+    margin-bottom: 15px;
+}
+
+#reloj {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.tiempo-bloque {
+    display: flex;
+    flex-direction: column;
+}
+
+.tiempo-bloque span {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #8fa38f; /* Tu verde eucalipto */
+    line-height: 1;
+}
+
+.tiempo-bloque small {
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.7rem;
+    color: #aaa;
+    margin-top: 8px;
+}
+
+.divisor {
+    color: #d1d9d3;
+    font-size: 1.5rem;
+    padding-bottom: 25px; /* Alineación visual */
+}
+
+/* Ajuste móvil para el contador */
+@media (max-width: 600px) {
+    .tiempo-bloque span { font-size: 1.6rem; } /* Un poco más pequeño para que quepan los segundos */
+    #reloj { gap: 8px; }
+    .divisor { font-size: 1.2rem; }
+}
