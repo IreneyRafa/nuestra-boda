@@ -211,126 +211,106 @@ footer {
     .divisor { font-size: 1.2rem; }
 }
 /* Pantalla completa de la intro */
+/* Contenedor principal */
 #intro-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fdfdfd; /* Fondo de la web */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999; /* Por encima de todo */
-    transition: transform 1s ease-in-out, opacity 0.8s ease;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: #f4f7f4; /* Fondo verde muy pálido */
+    display: flex; justify-content: center; align-items: center;
+    z-index: 9999;
+    transition: all 1s ease-in-out;
 }
 
-/* El sobre */
-.envelope-wrapper {
-    text-align: center;
-    cursor: pointer;
-}
-
+/* El Sobre Grande */
 .envelope {
     position: relative;
-    width: 250px;
-    height: 160px;
-    background-color: #8fa38f; /* Tu verde eucalipto */
-    margin: 0 auto;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 450px; /* Tamaño más grande */
+    height: 300px;
+    background-color: #8fa38f; /* Eucalipto base */
+    background-image: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.05) 100%); /* Textura */
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
+.envelope:hover {
+    transform: scale(1.02); /* Pequeño efecto al pasar el ratón */
+}
+
+/* Solapa superior */
 .flap {
     position: absolute;
-    top: 0;
-    width: 0;
-    height: 0;
-    border-left: 125px solid transparent;
-    border-right: 125px solid transparent;
-    border-top: 100px solid #7a8c7a; /* Un tono más oscuro */
+    top: 0; width: 0; height: 0;
+    border-left: 225px solid transparent;
+    border-right: 225px solid transparent;
+    border-top: 180px solid #7a8c7a; /* Tono más profundo */
     z-index: 3;
-    transition: transform 0.5s ease;
     transform-origin: top;
+    transition: transform 0.6s ease-in-out;
 }
 
-.letter {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    width: 230px;
-    height: 140px;
-    background: white;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    font-family: 'Alex Brush', cursive;
-    font-size: 1.2rem;
-    color: #4A5D4E;
-}
-
-/* Animación al abrir */
-.envelope.open .flap {
-    transform: rotateX(180deg);
-}
-
-.instruccion-abrir {
-    margin-top: 20px;
-    font-family: 'Lato', sans-serif;
-    color: #aaa;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-}
-
-/* Clase para ocultar la intro */
-.intro-fuera {
-    transform: translateY(-100%);
-    opacity: 0;
-    pointer-events: none;
-}
-/* Estilo del Sello de Cera */
+/* Sello de Cera Realista */
 .wax-seal {
     position: absolute;
-    top: 80px; /* Posicionado justo donde cierra la solapa */
+    top: 150px; /* Centrado en el cierre */
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
-    height: 60px;
-    background: #f5f5dc; /* Color beige crema */
-    background: radial-gradient(circle, #f9f9f2 0%, #e8e8d5 100%);
+    width: 75px; height: 75px;
+    background: radial-gradient(circle, #fdfdf5 0%, #e8e8d5 100%);
     border-radius: 50%;
-    z-index: 4; /* Por encima de la solapa */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    z-index: 5;
+    display: flex; align-items: center; justify-content: center;
     font-family: 'Alex Brush', cursive;
-    font-size: 1.2rem;
-    color: #8fa38f; /* Iniciales en tu color eucalipto */
+    font-size: 1.6rem;
+    color: #6a7a6a;
     font-weight: bold;
     box-shadow: 
-        inset 0 0 10px rgba(0,0,0,0.1),
-        3px 3px 10px rgba(0,0,0,0.2);
-    border: 2px solid #e2e2c8;
-    transition: opacity 0.3s ease;
-    user-select: none;
+        inset 0 0 15px rgba(0,0,0,0.1),
+        3px 5px 15px rgba(0,0,0,0.3);
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
-/* El sello debe desaparecer suavemente cuando se abre el sobre */
-.envelope.open .wax-seal {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease;
-}
-
-/* Efecto de borde irregular para que parezca cera real */
-.wax-seal::before {
-    content: '';
+/* Detalle de rama de eucalipto tras el sello */
+.hoja-decorativa {
     position: absolute;
-    width: 110%;
-    height: 110%;
-    border-radius: 45% 55% 50% 50% / 50% 45% 55% 50%; /* Forma irregular */
-    background: rgba(245, 245, 220, 0.4);
-    z-index: -1;
+    top: 130px; left: 55%;
+    width: 60px; height: 40px;
+    background: #a3b18a;
+    border-radius: 50% 0 50% 0;
+    z-index: 4;
+    transform: rotate(-15deg);
+    opacity: 0.6;
+}
+
+/* Carta interior */
+.letter {
+    position: absolute;
+    bottom: 20px; left: 25px;
+    width: 400px; height: 260px;
+    background: #fff;
+    z-index: 2;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.letter p { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #4A5D4E; }
+.letter small { font-family: 'Lato', sans-serif; letter-spacing: 3px; color: #8fa38f; }
+
+/* Animación de apertura */
+.envelope.open .flap { transform: rotateX(180deg); z-index: 1; }
+.envelope.open .wax-seal { opacity: 0; transition: 0.3s; }
+
+.intro-fuera {
+    transform: translateY(-100vh);
+    opacity: 0;
+}
+
+/* Ajuste para móvil (muy importante) */
+@media (max-width: 500px) {
+    .envelope { width: 320px; height: 210px; }
+    .flap { border-left-width: 160px; border-right-width: 160px; border-top-width: 130px; }
+    .letter { width: 280px; height: 180px; }
+    .wax-seal { top: 100px; width: 60px; height: 60px; }
 }
