@@ -210,3 +210,127 @@ footer {
     #reloj { gap: 8px; }
     .divisor { font-size: 1.2rem; }
 }
+/* Pantalla completa de la intro */
+#intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fdfdfd; /* Fondo de la web */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Por encima de todo */
+    transition: transform 1s ease-in-out, opacity 0.8s ease;
+}
+
+/* El sobre */
+.envelope-wrapper {
+    text-align: center;
+    cursor: pointer;
+}
+
+.envelope {
+    position: relative;
+    width: 250px;
+    height: 160px;
+    background-color: #8fa38f; /* Tu verde eucalipto */
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.flap {
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-left: 125px solid transparent;
+    border-right: 125px solid transparent;
+    border-top: 100px solid #7a8c7a; /* Un tono más oscuro */
+    z-index: 3;
+    transition: transform 0.5s ease;
+    transform-origin: top;
+}
+
+.letter {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 230px;
+    height: 140px;
+    background: white;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: 'Alex Brush', cursive;
+    font-size: 1.2rem;
+    color: #4A5D4E;
+}
+
+/* Animación al abrir */
+.envelope.open .flap {
+    transform: rotateX(180deg);
+}
+
+.instruccion-abrir {
+    margin-top: 20px;
+    font-family: 'Lato', sans-serif;
+    color: #aaa;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+/* Clase para ocultar la intro */
+.intro-fuera {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+/* Estilo del Sello de Cera */
+.wax-seal {
+    position: absolute;
+    top: 80px; /* Posicionado justo donde cierra la solapa */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background: #f5f5dc; /* Color beige crema */
+    background: radial-gradient(circle, #f9f9f2 0%, #e8e8d5 100%);
+    border-radius: 50%;
+    z-index: 4; /* Por encima de la solapa */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Alex Brush', cursive;
+    font-size: 1.2rem;
+    color: #8fa38f; /* Iniciales en tu color eucalipto */
+    font-weight: bold;
+    box-shadow: 
+        inset 0 0 10px rgba(0,0,0,0.1),
+        3px 3px 10px rgba(0,0,0,0.2);
+    border: 2px solid #e2e2c8;
+    transition: opacity 0.3s ease;
+    user-select: none;
+}
+
+/* El sello debe desaparecer suavemente cuando se abre el sobre */
+.envelope.open .wax-seal {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+/* Efecto de borde irregular para que parezca cera real */
+.wax-seal::before {
+    content: '';
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    border-radius: 45% 55% 50% 50% / 50% 45% 55% 50%; /* Forma irregular */
+    background: rgba(245, 245, 220, 0.4);
+    z-index: -1;
+}
