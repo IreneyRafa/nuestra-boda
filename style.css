@@ -211,127 +211,114 @@ footer {
     .divisor { font-size: 1.2rem; }
 }
 /* Pantalla completa de la intro */
-/* Contenedor principal */
-/* --- DISEÑO PREMIUM DE SOBRE --- */
+/* Contenedor de presentación */
 #intro-overlay {
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: #f9faf9; /* Fondo muy suave */
+    background: #f0f2f0; /* Color ambiente neutro */
     display: flex; flex-direction: column;
     justify-content: center; align-items: center;
     z-index: 9999;
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 1s cubic-bezier(0.7, 0, 0.3, 1);
 }
 
+/* El Sobre Crema */
 .envelope {
     position: relative;
-    width: 550px; /* Tamaño grande y elegante */
-    height: 380px;
-    background: #8fa38f; 
-    /* Textura de papel rugoso */
-    background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png'), 
-                      linear-gradient(135deg, #8fa38f 0%, #7d917d 100%);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    width: 580px; 
+    height: 400px;
+    background: #f5f1e6; /* Crema premium */
+    background-image: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(0,0,0,0.05) 100%);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     cursor: pointer;
     z-index: 10;
 }
 
+/* Solapa superior con sombra interna para profundidad */
 .flap {
     position: absolute;
     top: 0; left: 0;
     width: 0; height: 0;
-    border-left: 275px solid transparent;
-    border-right: 275px solid transparent;
-    border-top: 220px solid #7d917d; /* Más oscuro para dar profundidad */
-    z-index: 40; /* Por encima de todo cuando está cerrado */
+    border-left: 290px solid transparent;
+    border-right: 290px solid transparent;
+    border-top: 240px solid #ede8d9; 
+    z-index: 40;
     transform-origin: top;
-    transition: transform 0.7s ease-in-out, z-index 0.3s;
-    filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1));
+    transition: transform 0.8s ease-in-out;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1));
 }
 
-/* El interior del sobre (donde se guarda la carta) */
-.pocket {
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 0; height: 0;
-    border-left: 275px solid transparent;
-    border-right: 275px solid transparent;
-    border-bottom: 200px solid #9db09d; 
-    z-index: 30;
-}
-
-/* El Sello de Cera (Efecto 3D) */
+/* Sello de Cera Nacarado */
 .wax-seal {
     position: absolute;
-    top: 185px; left: 50%;
+    top: 200px; left: 50%;
     transform: translateX(-50%);
-    width: 85px; height: 85px;
-    background: #f5f5dc;
-    background: radial-gradient(circle, #fff9f0 0%, #e2e2c8 100%);
+    width: 90px; height: 90px;
+    background: radial-gradient(circle, #ffffff 0%, #e2ddd0 100%);
     border-radius: 50%;
-    z-index: 50; /* Siempre arriba del flap cerrado */
+    z-index: 50;
     display: flex; align-items: center; justify-content: center;
     font-family: 'Alex Brush', cursive;
     font-size: 1.8rem;
     color: #8fa38f;
-    box-shadow: 4px 4px 15px rgba(0,0,0,0.2), inset 1px 1px 3px white;
-    border: 1px solid #d1d1b5;
+    box-shadow: 4px 6px 15px rgba(0,0,0,0.15), inset 0 0 5px rgba(255,255,255,0.8);
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
-/* La Carta que sale */
+/* El interior del sobre */
+.pocket {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 0;
+    border-left: 290px solid transparent;
+    border-right: 290px solid transparent;
+    border-bottom: 220px solid #f9f6ef;
+    z-index: 30;
+}
+
+/* La Carta con la corona de eucalipto */
 .letter {
     position: absolute;
-    top: 10px; left: 25px;
-    width: 500px; height: 350px;
+    top: 15px; left: 30px;
+    width: 520px; height: 370px;
     background: white;
     z-index: 20;
-    padding: 40px;
-    transition: transform 0.6s ease;
-    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    transition: transform 0.7s ease;
 }
 
-.letter-content {
-    border: 1px solid #e0e7e0;
+.letter-inner {
+    border: 1px solid #f0f4f0;
     height: 100%;
     display: flex; flex-direction: column;
-    justify-content: center; align-items: center;
+    align-items: center; justify-content: center;
+    text-align: center;
 }
 
-.alex-brush { font-family: 'Alex Brush', cursive; font-size: 3rem; color: #4A5D4E; margin: 0; }
-.lato-light { font-family: 'Lato', sans-serif; font-weight: 300; letter-spacing: 5px; color: #8fa38f; }
-.separador-eucalipto { width: 50px; border: 0; border-top: 1px solid #8fa38f; margin: 20px 0; }
-
-/* Animaciones */
-.envelope.open .flap {
-    transform: rotateX(180deg);
-    z-index: 5; /* Pasa detrás de la carta al abrirse */
+.eucalipto-crown {
+    width: 150px;
+    margin-bottom: 10px;
+    opacity: 0.8;
 }
 
-.envelope.open .wax-seal {
-    transform: translateX(-50%) translateY(-50px) scale(0);
-    opacity: 0;
-    transition: 0.4s;
-}
+.nombres-letter { font-family: 'Alex Brush', cursive; font-size: 3.5rem; color: #4A5D4E; margin: 0; }
+.fecha-letter { font-family: 'Lato', sans-serif; letter-spacing: 4px; color: #8fa38f; font-size: 0.9rem; }
 
-.sombra-sobre {
-    width: 500px; height: 20px;
-    background: rgba(0,0,0,0.05);
+/* Animación de Apertura */
+.envelope.open .flap { transform: rotateX(180deg); z-index: 5; }
+.envelope.open .wax-seal { opacity: 0; transform: translateX(-50%) scale(0.5); transition: 0.4s; }
+.envelope.open .letter { transform: translateY(-120px); }
+
+.envelope-shadow {
+    width: 550px; height: 40px;
+    background: rgba(0,0,0,0.03);
     border-radius: 50%;
-    filter: blur(10px);
-    margin-top: 20px;
+    filter: blur(15px);
+    margin-top: -10px;
 }
 
-.intro-fuera {
-    transform: translateY(-100%);
-    opacity: 0;
-}
+.instruccion { margin-top: 30px; font-family: 'Lato', sans-serif; color: #aaa; text-transform: uppercase; letter-spacing: 2px; font-size: 0.7rem; }
 
-/* Responsivo */
-@media (max-width: 600px) {
-    .envelope { width: 320px; height: 220px; }
-    .flap { border-left-width: 160px; border-right-width: 160px; border-top-width: 130px; }
-    .pocket { border-left-width: 160px; border-right-width: 160px; border-bottom-width: 110px; }
-    .letter { width: 290px; height: 200px; left: 15px; }
-    .wax-seal { top: 105px; width: 60px; height: 60px; font-size: 1.2rem; }
-}
+.intro-fuera { transform: translateY(-100%); }
