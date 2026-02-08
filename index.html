@@ -8,6 +8,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="intro-overlay">
+    <div class="envelope-wrapper">
+        <div class="envelope" onclick="abrirInvitacion()">
+            <div class="flap"></div>
+            <div class="wax-seal">I & R</div> 
+            <div class="letter">
+                <p>Para nuestra familia y amigos</p>
+            </div>
+            <div class="front"></div>
+        </div>
+        <p class="instruccion-abrir">Haz clic en el sobre para abrir</p>
+    </div>
+</div>
 
      <div class="hero-container">
         <img src="boda.jpg" alt="Irene y Rafa" class="foto-hero">
@@ -88,6 +101,18 @@
         <p>Hecho con ❤️ para nuestros invitados</p>
     </footer>
 	<script>
+	function abrirInvitacion() {
+    const envelope = document.querySelector('.envelope');
+    const overlay = document.getElementById('intro-overlay');
+    
+    // Primero abrimos el sobre
+    envelope.classList.add('open');
+    
+    // Tras un pequeño retraso, deslizamos la pantalla hacia arriba
+    setTimeout(() => {
+        overlay.classList.add('intro-fuera');
+    }, 1200);
+}
 document.addEventListener('DOMContentLoaded', function() {
     // Definimos la fecha exacta con el desfase horario de España en junio (UTC+2)
     const weddingDay = new Date("2026-06-20T17:30:00+02:00").getTime();
