@@ -212,105 +212,126 @@ footer {
 }
 /* Pantalla completa de la intro */
 /* Contenedor principal */
+/* --- DISEÑO PREMIUM DE SOBRE --- */
 #intro-overlay {
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background-color: #f4f7f4; /* Fondo verde muy pálido */
-    display: flex; justify-content: center; align-items: center;
+    background: #f9faf9; /* Fondo muy suave */
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
     z-index: 9999;
-    transition: all 1s ease-in-out;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* El Sobre Grande */
 .envelope {
     position: relative;
-    width: 450px; /* Tamaño más grande */
-    height: 300px;
-    background-color: #8fa38f; /* Eucalipto base */
-    background-image: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.05) 100%); /* Textura */
-    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    width: 550px; /* Tamaño grande y elegante */
+    height: 380px;
+    background: #8fa38f; 
+    /* Textura de papel rugoso */
+    background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png'), 
+                      linear-gradient(135deg, #8fa38f 0%, #7d917d 100%);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     cursor: pointer;
-    transition: transform 0.3s ease;
+    z-index: 10;
 }
 
-.envelope:hover {
-    transform: scale(1.02); /* Pequeño efecto al pasar el ratón */
-}
-
-/* Solapa superior */
 .flap {
     position: absolute;
-    top: 0; width: 0; height: 0;
-    border-left: 225px solid transparent;
-    border-right: 225px solid transparent;
-    border-top: 180px solid #7a8c7a; /* Tono más profundo */
-    z-index: 3;
+    top: 0; left: 0;
+    width: 0; height: 0;
+    border-left: 275px solid transparent;
+    border-right: 275px solid transparent;
+    border-top: 220px solid #7d917d; /* Más oscuro para dar profundidad */
+    z-index: 40; /* Por encima de todo cuando está cerrado */
     transform-origin: top;
-    transition: transform 0.6s ease-in-out;
+    transition: transform 0.7s ease-in-out, z-index 0.3s;
+    filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1));
 }
 
-/* Sello de Cera Realista */
+/* El interior del sobre (donde se guarda la carta) */
+.pocket {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 0;
+    border-left: 275px solid transparent;
+    border-right: 275px solid transparent;
+    border-bottom: 200px solid #9db09d; 
+    z-index: 30;
+}
+
+/* El Sello de Cera (Efecto 3D) */
 .wax-seal {
     position: absolute;
-    top: 150px; /* Centrado en el cierre */
-    left: 50%;
+    top: 185px; left: 50%;
     transform: translateX(-50%);
-    width: 75px; height: 75px;
-    background: radial-gradient(circle, #fdfdf5 0%, #e8e8d5 100%);
+    width: 85px; height: 85px;
+    background: #f5f5dc;
+    background: radial-gradient(circle, #fff9f0 0%, #e2e2c8 100%);
     border-radius: 50%;
-    z-index: 5;
+    z-index: 50; /* Siempre arriba del flap cerrado */
     display: flex; align-items: center; justify-content: center;
     font-family: 'Alex Brush', cursive;
-    font-size: 1.6rem;
-    color: #6a7a6a;
-    font-weight: bold;
-    box-shadow: 
-        inset 0 0 15px rgba(0,0,0,0.1),
-        3px 5px 15px rgba(0,0,0,0.3);
-    border: 1px solid rgba(0,0,0,0.05);
+    font-size: 1.8rem;
+    color: #8fa38f;
+    box-shadow: 4px 4px 15px rgba(0,0,0,0.2), inset 1px 1px 3px white;
+    border: 1px solid #d1d1b5;
 }
 
-/* Detalle de rama de eucalipto tras el sello */
-.hoja-decorativa {
-    position: absolute;
-    top: 130px; left: 55%;
-    width: 60px; height: 40px;
-    background: #a3b18a;
-    border-radius: 50% 0 50% 0;
-    z-index: 4;
-    transform: rotate(-15deg);
-    opacity: 0.6;
-}
-
-/* Carta interior */
+/* La Carta que sale */
 .letter {
     position: absolute;
-    bottom: 20px; left: 25px;
-    width: 400px; height: 260px;
-    background: #fff;
-    z-index: 2;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    top: 10px; left: 25px;
+    width: 500px; height: 350px;
+    background: white;
+    z-index: 20;
+    padding: 40px;
+    transition: transform 0.6s ease;
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
 }
 
-.letter p { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #4A5D4E; }
-.letter small { font-family: 'Lato', sans-serif; letter-spacing: 3px; color: #8fa38f; }
+.letter-content {
+    border: 1px solid #e0e7e0;
+    height: 100%;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+}
 
-/* Animación de apertura */
-.envelope.open .flap { transform: rotateX(180deg); z-index: 1; }
-.envelope.open .wax-seal { opacity: 0; transition: 0.3s; }
+.alex-brush { font-family: 'Alex Brush', cursive; font-size: 3rem; color: #4A5D4E; margin: 0; }
+.lato-light { font-family: 'Lato', sans-serif; font-weight: 300; letter-spacing: 5px; color: #8fa38f; }
+.separador-eucalipto { width: 50px; border: 0; border-top: 1px solid #8fa38f; margin: 20px 0; }
+
+/* Animaciones */
+.envelope.open .flap {
+    transform: rotateX(180deg);
+    z-index: 5; /* Pasa detrás de la carta al abrirse */
+}
+
+.envelope.open .wax-seal {
+    transform: translateX(-50%) translateY(-50px) scale(0);
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.sombra-sobre {
+    width: 500px; height: 20px;
+    background: rgba(0,0,0,0.05);
+    border-radius: 50%;
+    filter: blur(10px);
+    margin-top: 20px;
+}
 
 .intro-fuera {
-    transform: translateY(-100vh);
+    transform: translateY(-100%);
     opacity: 0;
 }
 
-/* Ajuste para móvil (muy importante) */
-@media (max-width: 500px) {
-    .envelope { width: 320px; height: 210px; }
+/* Responsivo */
+@media (max-width: 600px) {
+    .envelope { width: 320px; height: 220px; }
     .flap { border-left-width: 160px; border-right-width: 160px; border-top-width: 130px; }
-    .letter { width: 280px; height: 180px; }
-    .wax-seal { top: 100px; width: 60px; height: 60px; }
+    .pocket { border-left-width: 160px; border-right-width: 160px; border-bottom-width: 110px; }
+    .letter { width: 290px; height: 200px; left: 15px; }
+    .wax-seal { top: 105px; width: 60px; height: 60px; font-size: 1.2rem; }
 }
