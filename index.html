@@ -9,6 +9,13 @@
 </head>
 <body>
 
+<div id="intro-video-container">
+    <video id="video-bienvenida" autoplay muted playsinline>
+        <source src="horizontal16-9_24fps_34749.mp4" type="video/mp4">
+        Tu navegador no soporta vídeos.
+    </video>
+</div>
+
      <div class="hero-container">
         <img src="boda.jpg" alt="Irene y Rafa" class="foto-hero">
         <div class="overlay-text">
@@ -121,6 +128,27 @@ document.addEventListener('DOMContentLoaded', function() {
     updateTimer();
     const timerInterval = setInterval(updateTimer, 1000);
 });
+// Lógica para la pantalla de bienvenida
+const intro = document.getElementById('intro-video-container');
+const video = document.getElementById('video-bienvenida');
+const body = document.body;
+
+// Bloqueamos el scroll al inicio
+body.classList.add('no-scroll');
+
+// Opción A: Desaparecer cuando el vídeo termine
+video.onended = function() {
+    intro.classList.add('hidden-intro');
+    body.classList.remove('no-scroll');
+};
+
+// Opción B: Desaparecer tras un tiempo fijo (ej: 4 segundos) por seguridad
+setTimeout(() => {
+    if (!intro.classList.contains('hidden-intro')) {
+        intro.classList.add('hidden-intro');
+        body.classList.remove('no-scroll');
+    }
+}, 4000);
 </script>
 
 
