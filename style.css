@@ -241,3 +241,100 @@ footer {
 body.no-scroll {
     overflow: hidden;
 }
+/* Mejora en los títulos de las tarjetas */
+.info-item h3 {
+    color: #8fa38f;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+}
+
+/* Efecto suave al hacer scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Color de selección de texto en verde eucalipto */
+::selection {
+    background: #8fa38f;
+    color: white;
+}
+/* DISEÑO ITINERARIO BUS */
+.intro-bus {
+    margin-bottom: 40px;
+    color: #666;
+}
+
+.itinerario-bus {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-left: 20px;
+}
+
+/* Línea vertical central */
+.itinerario-bus::before {
+    content: '';
+    position: absolute;
+    left: 85px; /* Alineada con los puntos */
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #d1d9d3; /* Gris suave */
+}
+
+.parada {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.hora {
+    width: 70px;
+    font-weight: bold;
+    color: #8fa38f; /* Verde eucalipto */
+    font-family: 'Playfair Display', serif;
+    padding-top: 5px;
+}
+
+.punto {
+    width: 12px;
+    height: 12px;
+    background-color: #8fa38f;
+    border-radius: 50%;
+    margin: 10px 15px 0 15px;
+    z-index: 2;
+    border: 3px solid #fff;
+}
+
+.destino .punto {
+    background-color: #556b55; /* Un tono más oscuro para el destino final */
+}
+
+.info-parada {
+    text-align: left;
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 1px solid #eef2ee;
+    flex: 1;
+}
+
+.info-parada h3 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.vuelta-bus {
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 1px dashed #d1d9d3;
+    color: #555;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 600px) {
+    .itinerario-bus::before { left: 65px; }
+    .hora { width: 55px; font-size: 0.9rem; }
+}
