@@ -516,3 +516,56 @@ html {
   
   /* Ya no necesitamos el nth-child(5) porque ahora la 5 y la 6 hacen pareja */
 }
+
+/* Contenedor que alinea las tarjetas */
+.info-flex-container {
+    display: flex;
+    justify-content: center; /* Centra las tarjetas */
+    gap: 20px;               /* Espacio entre tarjetas */
+    flex-wrap: wrap;         /* Si no caben (en móvil), se bajan */
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilo común para ambas tarjetas */
+.info-card {
+    background-color: #f9fbf9; 
+    border: 1px solid #d1dbd1;
+    padding: 30px;
+    border-radius: 12px;
+    flex: 1;                 /* Hace que midan lo mismo */
+    min-width: 300px;        /* Evita que se compriman demasiado */
+    max-width: 450px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+/* Botón Eucalipto (para la Guía) */
+.btn-eucalipto {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #445c4d; /* Verde Eucalipto */
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+/* Botón Secundario (puedes usarlo para Alojamiento) */
+.btn-secundario {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: 1px solid #445c4d;
+    color: #445c4d;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.btn-eucalipto:hover, .btn-secundario:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+}
