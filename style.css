@@ -462,3 +462,23 @@ html {
     padding: 80px 20px;
     max-width: 100%;
 }
+/* Mantenemos tu estilo base para ambos */
+.contenedor-galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* O el ajuste que tuvieras */
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+/* Regla específica para centrar la fila de abajo */
+.fila-centrada {
+  justify-content: center; /* Esto es lo que hace la magia */
+  gap: 30px;               /* Puedes darles un poco más de aire si quieres */
+}
+
+.foto-click {
+  width: 30%; /* Ajusta según el tamaño que quieras que tengan */
+  cursor: pointer;
+  transition: transform 0.3s;
+}
