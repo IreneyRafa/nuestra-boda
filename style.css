@@ -482,3 +482,33 @@ html {
   cursor: pointer;
   transition: transform 0.3s;
 }
+/* Estilo general para ordenador (3 arriba, 2 abajo centradas) */
+.contenedor-galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centra todo el contenido */
+  gap: 15px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.foto-click {
+  width: 30%; /* En PC caben 3 por fila */
+  height: auto;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* --- AJUSTE PARA MÓVIL --- */
+@media (max-width: 600px) {
+  .foto-click {
+    /* Calculamos el 50% menos el hueco (gap) para que entren 2 por fila */
+    width: calc(50% - 10px); 
+  }
+
+  /* La quinta foto (la última) debe ocupar el 100% para quedarse sola y centrada */
+  .foto-click:nth-child(5) {
+    width: 80%; /* Un poco más pequeña que el total para que no agobie */
+    margin: 0 auto;
+  }
+}
