@@ -482,33 +482,48 @@ html {
   cursor: pointer;
   transition: transform 0.3s;
 }
-/* Estilo general para ordenador (3 arriba, 2 abajo centradas) */
+/* 1. Estilo base del contenedor */
 .contenedor-galeria {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Centra todo el contenido */
-  gap: 15px;
-  max-width: 1000px;
+  flex-wrap: wrap;       /* Permite que las fotos bajen de fila */
+  justify-content: center; /* Centra el contenido sobrante (las 2 de abajo en PC) */
+  gap: 10px;             /* Espacio entre fotos */
+  width: 100%;
+  max-width: 1200px;     /* Opcional: para que no se estire infinito en pantallas gigantes */
   margin: 0 auto;
 }
 
+/* 2. Estilo de las fotos (SIEMPRE CUADRADAS) */
 .foto-click {
-  width: 30%; /* En PC caben 3 por fila */
-  height: auto;
-  object-fit: cover;
+  aspect-ratio: 1 / 1;   /* Crea el cuadrado perfecto */
+  object-fit: cover;     /* Corta los bordes sobrantes sin deformar la imagen */
   cursor: pointer;
+  transition: transform 0.3s ease;
+  border-radius: 4px;    /* Opcional: un toque de redondeado en las esquinas */
 }
 
-/* --- AJUSTE PARA MÓVIL --- */
+.foto-click:hover {
+  transform: scale(1.02); /* Efecto sutil al pasar el ratón */
+}
+
+/* 3. VISTA PC (Pantallas de más de 600px) */
+@media (min-width: 601px) {
+  .foto-click {
+    /* Calculamos para que quepan 3 fotos por fila restando el espacio del gap */
+    width: calc(33.33% - 10px); 
+  }
+}
+
+/* 4. VISTA MÓVIL (Estructura 2 - 2 - 1) */
 @media (max-width: 600px) {
   .foto-click {
-    /* Calculamos el 50% menos el hueco (gap) para que entren 2 por fila */
-    width: calc(50% - 10px); 
+    /* Calculamos para que quepan 2 fotos por fila */
+    width: calc(50% - 5px); 
   }
 
-  /* La quinta foto (la última) debe ocupar el 100% para quedarse sola y centrada */
+  /* La quinta foto: se queda con el mismo tamaño pero centrada sola */
   .foto-click:nth-child(5) {
-    width: 80%; /* Un poco más pequeña que el total para que no agobie */
-    margin: 0 auto;
+    width: calc(50% - 5px); 
+    margin: 0 auto; /* La centra horizontalmente en su fila */
   }
 }
