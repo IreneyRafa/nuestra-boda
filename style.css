@@ -485,45 +485,34 @@ html {
 /* 1. Estilo base del contenedor */
 .contenedor-galeria {
   display: flex;
-  flex-wrap: wrap;       /* Permite que las fotos bajen de fila */
-  justify-content: center; /* Centra el contenido sobrante (las 2 de abajo en PC) */
-  gap: 10px;             /* Espacio entre fotos */
+  flex-wrap: wrap;
+  justify-content: center; /* Mantiene el grupo centrado */
+  gap: 10px;
   width: 100%;
-  max-width: 1200px;     /* Opcional: para que no se estire infinito en pantallas gigantes */
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-/* 2. Estilo de las fotos (SIEMPRE CUADRADAS) */
 .foto-click {
-  aspect-ratio: 1 / 1;   /* Crea el cuadrado perfecto */
-  object-fit: cover;     /* Corta los bordes sobrantes sin deformar la imagen */
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   cursor: pointer;
   transition: transform 0.3s ease;
-  border-radius: 4px;    /* Opcional: un toque de redondeado en las esquinas */
+  border-radius: 4px;
 }
 
-.foto-click:hover {
-  transform: scale(1.02); /* Efecto sutil al pasar el ratón */
-}
-
-/* 3. VISTA PC (Pantallas de más de 600px) */
+/* --- VISTA PC (3 fotos por fila: 3 arriba y 3 abajo) --- */
 @media (min-width: 601px) {
   .foto-click {
-    /* Calculamos para que quepan 3 fotos por fila restando el espacio del gap */
     width: calc(33.33% - 10px); 
   }
 }
 
-/* 4. VISTA MÓVIL (Estructura 2 - 2 - 1) */
+/* --- VISTA MÓVIL (2 fotos por fila: 2 - 2 - 2) --- */
 @media (max-width: 600px) {
   .foto-click {
-    /* Calculamos para que quepan 2 fotos por fila */
-    width: calc(50% - 5px); 
+    width: calc(50% - 10px); 
   }
-
-  /* La quinta foto: se queda con el mismo tamaño pero centrada sola */
-  .foto-click:nth-child(5) {
-    width: calc(50% - 5px); 
-    margin: 0 auto; /* La centra horizontalmente en su fila */
-  }
+  
+  /* Ya no necesitamos el nth-child(5) porque ahora la 5 y la 6 hacen pareja */
 }
