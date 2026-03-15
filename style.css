@@ -264,22 +264,23 @@ html {
     color: #666;
 }
 
+/* --- AJUSTE GENERAL (PC y Móvil) --- */
 .itinerario-bus {
     position: relative;
     max-width: 600px;
     margin: 0 auto;
-    padding-left: 20px;
+    padding-left: 100px; /* Aumentamos el margen para que quepa la hora con holgura */
 }
 
 /* Línea vertical central */
 .itinerario-bus::before {
     content: '';
     position: absolute;
-    left: 85px; /* Alineada con los puntos */
+    left: 85px; /* Posición fija de la línea */
     top: 0;
     bottom: 0;
     width: 2px;
-    background: #d1d9d3; /* Gris suave */
+    background: #d1d9d3;
 }
 
 .parada {
@@ -290,21 +291,46 @@ html {
 }
 
 .hora {
-    width: 70px;
+    position: absolute;
+    left: -95px; /* Empuja la hora a la izquierda de la línea */
+    width: 80px;
+    text-align: right;
     font-weight: bold;
-    color: #8fa38f; /* Verde eucalipto */
+    color: #8fa38f;
     font-family: 'Playfair Display', serif;
     padding-top: 5px;
 }
 
 .punto {
+    position: absolute;
+    left: -21px; /* Centra el punto exactamente sobre la línea (85px - 6px de radio) */
     width: 12px;
     height: 12px;
     background-color: #8fa38f;
     border-radius: 50%;
-    margin: 10px 15px 0 15px;
     z-index: 2;
     border: 3px solid #fff;
+}
+
+/* --- AJUSTE ESPECÍFICO PARA MÓVILES --- */
+@media (max-width: 600px) {
+    .itinerario-bus {
+        padding-left: 80px; /* Un poco menos de espacio en pantallas pequeñas */
+    }
+
+    .itinerario-bus::before {
+        left: 65px; /* Movemos la línea un poco a la izquierda */
+    }
+
+    .hora {
+        left: -75px; /* Ajustamos la hora para que no se salga de la pantalla */
+        width: 60px;
+        font-size: 0.85rem;
+    }
+
+    .punto {
+        left: -21px; /* Se mantiene relativo a la posición del contenedor de la parada */
+    }
 }
 
 .destino .punto {
@@ -587,4 +613,23 @@ html {
 
 .btn-descarga:hover {
     background-color: #5a7a66; /* Un verde un poco más claro al pasar el ratón */
+}
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #8fa38f; /* Tu verde eucalipto */
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
 }
