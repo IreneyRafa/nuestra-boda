@@ -358,31 +358,7 @@ html {
     border-top: 1px dashed #d1d9d3;
     color: #555;
 }
-/* --- ANIMACIÓN DEL AUTOBÚS --- */
-.bus-animado {
-    position: absolute;
-    left: 77px; /* Alineado con la línea en PC */
-    font-size: 1.2rem;
-    z-index: 3;
-    animation: moverBus 8s linear infinite;
-    /* Tinte verde eucalipto para el emoji */
-    filter: grayscale(1) sepia(1) hue-rotate(70deg) brightness(0.8);
-}
 
-@keyframes moverBus {
-    0% { top: 0; opacity: 0; }
-    5% { opacity: 1; }
-    95% { opacity: 1; }
-    100% { top: 95%; opacity: 0; }
-}
-
-/* Ajuste del bus para el diseño de móvil */
-@media (max-width: 600px) {
-    .bus-animado {
-        left: 57px; /* Ajustado a la línea de móvil */
-        font-size: 1.1rem;
-    }
-}
 /* Ajuste para móviles */
 @media (max-width: 600px) {
     .itinerario-bus::before { left: 65px; }
