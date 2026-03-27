@@ -87,9 +87,14 @@
   </div>
 </section>
 
-<div id="modal-visor" class="modal" onclick="this.style.display='none'">
-    <span class="cerrar">&times;</span>
+<div id="modal-visor" class="modal">
+    <span class="cerrar" onclick="cerrarModal()">×</span>
+    
+    <button class="flecha anterior" onclick="cambiarFoto(-1)">&#10094;</button>
+    
     <img class="modal-contenido" id="img-ampliada">
+    
+    <button class="flecha siguiente" onclick="cambiarFoto(1)">&#10095;</button>
 </div>
        </section>
     <section id="rsvp">
@@ -210,12 +215,52 @@ setTimeout(() => {
     }
 }, 4000);
 
+let fotosGaleria = [];
+let indiceActual = 0;
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Guardamos todas las imágenes de la galería en un array al cargar la página
+    fotosGaleria = Array.from(document.querySelectorAll('.foto-click'));
+});
+
 function ampliarImagen(elemento) {
-    var modal = document.getElementById("modal-visor");
-    var imgModal = document.getElementById("img-ampliada");
+    const modal = document.getElementById("modal-visor");
+    const imgModal = document.getElementById("img-ampliada");
+    
+    // Encontramos el índice de la foto pinchada
+    indiceActual = fotosGaleria.indexOf(elemento);
+    
     modal.style.display = "flex";
     imgModal.src = elemento.src;
 }
+
+function cerrarModal() {
+    document.getElementById("modal-visor").style.display = "none";
+}
+
+function cambiarFoto(direccion) {
+    indiceActual += direccion;
+
+    // Si llegamos al final, volvemos al principio (bucle)
+    if (indiceActual >= fotosGaleria.length) indiceActual = 0;
+    // Si vamos hacia atrás desde la primera, vamos a la última
+    if (indiceActual < 0) indiceActual = fotosGaleria.length - 1;
+
+    const nuevaImagen = fotosGaleria[indiceActual];
+    document.getElementById("img-ampliada").src = nuevaImagen.src;
+}
+
+// Extra: Cerrar al hacer clic fuera de la foto o con la tecla ESC
+window.onclick = function(event) {
+    const modal = document.getElementById("modal-visor");
+    if (event.target == modal) cerrarModal();
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === "ArrowLeft") cambiarFoto(-1);
+    if (e.key === "ArrowRight") cambiarFoto(1);
+    if (e.key === "Escape") cerrarModal();
+});
 </script>
 
 
