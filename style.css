@@ -20,7 +20,7 @@ body.no-scroll { overflow: hidden; }
 .fuente-elegante { font-family: 'Alex Brush', cursive; font-size: 4.5rem; }
 .nombres-titulo { font-family: 'Playfair Display', serif; font-size: 4rem; margin: 10px 0; }
 
-/* --- SECCIONES COMUNES --- */
+/* --- SECCIONES --- */
 section { padding: 80px 20px; text-align: center; max-width: 1000px; margin: 0 auto; }
 h2 { font-family: 'Alex Brush', cursive; font-size: 3.5rem; color: #8fa38f; margin-bottom: 25px; }
 
@@ -46,25 +46,21 @@ h2 { font-family: 'Alex Brush', cursive; font-size: 3.5rem; color: #8fa38f; marg
 #rsvp { background: #F4F8F4; max-width: 100%; }
 #rsvp iframe { width: 100%; border: none; }
 
-/* --- BUS --- */
-.itinerario-bus { position: relative; max-width: 600px; margin: 0 auto; padding-left: 100px; border-left: 2px solid #d1d9d3; }
-.parada { position: relative; margin-bottom: 30px; text-align: left; padding-left: 20px; }
-.hora { position: absolute; left: -95px; font-weight: bold; color: #8fa38f; font-family: 'Playfair Display'; }
-.punto { position: absolute; left: -27px; width: 12px; height: 12px; background: #8fa38f; border-radius: 50%; border: 3px solid #fff; top: 5px; }
-.info-parada { background: #fff; padding: 15px; border-radius: 10px; border: 1px solid #eef2ee; }
+/* --- BUS (Línea corregida a la derecha de las horas) --- */
+.itinerario-bus { position: relative; max-width: 600px; margin: 0 auto; padding-left: 100px; }
+.itinerario-bus::before { content: ''; position: absolute; left: 85px; top: 0; bottom: 0; width: 2px; background: #d1d9d3; }
+.parada { display: flex; align-items: flex-start; margin-bottom: 30px; position: relative; }
+.hora { position: absolute; left: -95px; width: 80px; text-align: right; font-weight: bold; color: #8fa38f; font-family: 'Playfair Display', serif; padding-top: 5px; }
+.punto { position: absolute; left: -21px; width: 12px; height: 12px; background-color: #8fa38f; border-radius: 50%; z-index: 2; border: 3px solid #fff; }
+.info-parada { text-align: left; background: #fff; padding: 15px 20px; border-radius: 10px; border: 1px solid #eef2ee; flex: 1; }
 
-/* --- INFO CARDS --- */
-.info-flex-container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; padding: 20px; }
-.info-card { background: #F4F8F4; border: 1px solid #E0EAE0; padding: 30px; border-radius: 12px; flex: 1; min-width: 280px; max-width: 450px; }
-.btn-descarga { display: inline-block; margin-top: 15px; padding: 10px 20px; background: #445c4d; color: #fff; text-decoration: none; border-radius: 20px; font-weight: bold; }
+/* --- FOOTER CENTRADO --- */
+footer { padding: 40px; background: #ffffff; color: #aaa; font-size: 0.9rem; text-align: center; width: 100%; }
 
 /* --- RESPONSIVE --- */
 @media (max-width: 600px) {
-    .hero-container { height: 70vh; }
-    .fuente-elegante, .nombres-titulo { font-size: 2.8rem; }
-    .foto-click { width: calc(50% - 10px); }
-    .tiempo-bloque span { font-size: 1.8rem; }
-    #reloj { gap: 10px; }
-    .itinerario-bus { padding-left: 70px; }
-    .hora { left: -65px; font-size: 0.8rem; }
+    .itinerario-bus { padding-left: 80px; }
+    .itinerario-bus::before { left: 65px; }
+    .hora { left: -75px; width: 60px; font-size: 0.85rem; }
+    .punto { left: -21px; }
 }
