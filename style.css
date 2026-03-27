@@ -663,3 +663,22 @@ html {
         padding: 10px;
     }
 }
+/* Ajuste para que el formulario respire mejor en móviles */
+#rsvp iframe {
+    width: 100%;
+    min-width: 100%;
+    border: none;
+    display: block;
+}
+
+@media (max-width: 600px) {
+    #rsvp {
+        padding-left: 10px;  /* Reducimos márgenes laterales */
+        padding-right: 10px;
+    }
+    
+    /* Forzamos al contenedor a no tener desbordamiento horizontal */
+    .mapa-contenedor, #rsvp {
+        overflow-x: hidden;
+    }
+}
