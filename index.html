@@ -7,8 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:wght@700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="no-scroll">
-
+<body>
 <nav class="navbar">
     <a href="#detalles">Lugar</a>
     <a href="#galeria-pazo">El Pazo</a>
@@ -23,150 +22,247 @@
     </video>
 </div>
 
-<div class="hero-container">
-    <img src="boda.jpg" alt="Irene y Rafa" class="foto-hero">
-    <div class="overlay-text">
-        <h1 class="fuente-elegante">¡Nos casamos!</h1>
-        <h1 class="nombres-titulo">Irene & Rafa</h1>
-        <h1 class="fuente-elegante fecha-linea">20 de Junio de 2026</h1>
+     <div class="hero-container">
+        <img src="boda.jpg" alt="Irene y Rafa" class="foto-hero">
+        <div class="overlay-text">
+            <h1 class="fuente-elegante">Nos casamos!</h1>
+            <h1 class="nombres-titulo">Irene & Rafa</h1>
+            <h1 class="fuente-elegante fecha-linea">20 de Junio de 2026</h1>
+        </div>
+    </div>
+	<section id="contador-boda">
+    <p class="frase-espera">Solo faltan...</p>
+    <div id="reloj">
+    <div class="tiempo-bloque">
+        <span id="dias">00</span>
+        <small>días</small>
+    </div>
+    <div class="divisor">•</div>
+    <div class="tiempo-bloque">
+        <span id="horas">00</span>
+        <small>horas</small>
+    </div>
+    <div class="divisor">•</div>
+    <div class="tiempo-bloque">
+        <span id="minutos">00</span>
+        <small>min</small>
+    </div>
+    <div class="divisor">•</div>
+    <div class="tiempo-bloque">
+        <span id="segundos">00</span>
+        <small>seg</small>
     </div>
 </div>
 
-<section id="contador-boda">
-    <p class="frase-espera">Solo faltan...</p>
-    <div id="reloj">
-        <div class="tiempo-bloque"><span id="dias">00</span><small>días</small></div>
-        <div class="divisor">•</div>
-        <div class="tiempo-bloque"><span id="horas">00</span><small>horas</small></div>
-        <div class="divisor">•</div>
-        <div class="tiempo-bloque"><span id="minutos">00</span><small>min</small></div>
-        <div class="divisor">•</div>
-        <div class="tiempo-bloque"><span id="segundos">00</span><small>seg</small></div>
-    </div>
-</section>
-
-<section id="detalles">
-    <h2>Dónde y Cuándo</h2>
-    <p>📍 <strong>Pazo Casa Grande</strong></p>
-    <p>A Pobra de San Xiao, Lugo</p>
-    <p>⏰ 17:30 h</p>
-    <div class="mapa-contenedor">
-        <iframe src="http://googleusercontent.com/maps.google.com/3" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-</section>
-
-<section id="galeria-pazo">
+    <section id="detalles">
+        <h2>Dónde y Cuándo</h2>
+        <p>📍 <strong>Pazo Casa Grande</strong></p>
+        <p>A Pobra de San Xiao, Lugo</p>
+        <p>⏰ 17:30 h</p>
+        
+        <div class="mapa-contenedor">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2922.783457956485!2d-7.446683423405703!3d42.862586548094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd3135fbcb7ee281%3A0x8f73ba9f1afc5a85!2sPazo%20Casa%20Grande!5e0!3m2!1ses!2ses!4v1714470000000!5m2!1ses!2ses" 
+        width="100%" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+        </div>
+    </section>
+	
+	<section id="galeria-pazo">
     <h2>El Pazo Casa Grande</h2>
     <p>Os compartimos algunos rincones del lugar donde celebraremos nuestro gran día.</p>
-    <div class="contenedor-galeria">
-        <img src="Iglesia.jpeg" alt="Pazo 1" class="foto-click" onclick="ampliarImagen(this)">
-        <img src="Jardines.jpeg" alt="Pazo 2" class="foto-click" onclick="ampliarImagen(this)">
-        <img src="Patio.jpeg" alt="Pazo 3" class="foto-click" onclick="ampliarImagen(this)">
-        <img src="Hortensias.jpeg" alt="Pazo 4" class="foto-click" onclick="ampliarImagen(this)">
-        <img src="Palomar.jpeg" alt="Pazo 5" class="foto-click" onclick="ampliarImagen(this)">
-        <img src="Entrada.jpeg" alt="Pazo 6" class="foto-click" onclick="ampliarImagen(this)">
-    </div>
+    <section>
+  <div class="contenedor-galeria">
+    <img src="Iglesia.jpeg" alt="Pazo 1" class="foto-click" onclick="ampliarImagen(this)">
+    <img src="Jardines.jpeg" alt="Pazo 2" class="foto-click" onclick="ampliarImagen(this)">
+    <img src="Patio.jpeg" alt="Pazo 3" class="foto-click" onclick="ampliarImagen(this)">
+    <img src="Hortensias.jpeg" alt="Pazo 4" class="foto-click" onclick="ampliarImagen(this)">
+    <img src="Palomar.jpeg" alt="Pazo 5" class="foto-click" onclick="ampliarImagen(this)">
+	<img src="Entrada.jpeg" alt="Pazo 6" class="foto-click" onclick="ampliarImagen(this)">
+  </div>
 </section>
 
 <div id="modal-visor" class="modal">
     <span class="cerrar" onclick="cerrarModal()">×</span>
-    <button class="flecha anterior" onclick="cambiarFoto(-1)">❮</button>
+    
+    <button class="flecha anterior" onclick="cambiarFoto(-1)">&#10094;</button>
+    
     <img class="modal-contenido" id="img-ampliada">
-    <button class="flecha siguiente" onclick="cambiarFoto(1)">❯</button>
+    
+    <button class="flecha siguiente" onclick="cambiarFoto(1)">&#10095;</button>
 </div>
-
-<section id="rsvp">
-    <h2>Confirmar Asistencia</h2>
-    <p>Nos hace mucha ilusión que nos acompañéis. Por favor, confirmad vuestra asistencia aquí:</p>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScbee5hYzNOrAw4M5xGKCkSie769lPuZFta82XAPSNghOVMLw/viewform?embedded=true" width="100%" height="1100" frameborder="0">Cargando…</iframe>
-</section>
-
-<section id="bus">
+       </section>
+    <section id="rsvp">
+        <h2>Confirmar Asistencia</h2>
+        <p>Nos hace mucha ilusión que nos acompañéis. Por favor, confirmad vuestra asistencia aquí:</p>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScbee5hYzNOrAw4M5xGKCkSie769lPuZFta82XAPSNghOVMLw/viewform?embedded=true" width="100%" height="1100" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+    </section>
+    <section id="bus">
     <h2>Servicio de Autobús</h2>
+    <p class="intro-bus">Para vuestra comodidad, dispondremos de varias paradas en la ciudad de Lugo antes de salir hacia el Pazo.</p>
+    
     <div class="itinerario-bus">
         <div class="parada">
-            <div class="hora">16:30h</div><div class="punto"></div>
-            <div class="info-parada"><h3>Primera Parada</h3><p>Ubicación: Por Definir</p></div>
+            <div class="hora">16:30h</div>
+            <div class="punto"></div>
+            <div class="info-parada">
+                <h3>Primera Parada</h3>
+                <p>Ubicación: Por Definir</p>
+            </div>
         </div>
+
         <div class="parada">
-            <div class="hora">16:45h</div><div class="punto"></div>
-            <div class="info-parada"><h3>Segunda Parada</h3><p>Ubicación: Por Definir</p></div>
+            <div class="hora">16:45h</div>
+            <div class="punto"></div>
+            <div class="info-parada">
+                <h3>Segunda Parada</h3>
+                <p>Ubicación: Por Definir</p>
+            </div>
         </div>
+
         <div class="parada destino">
-            <div class="hora">17:30h</div><div class="punto"></div>
-            <div class="info-parada"><h3>Llegada al Pazo</h3><p>Pazo Casa Grande, A Pobra de San Xiao</p></div>
+            <div class="hora">17:30h</div>
+            <div class="punto"></div>
+            <div class="info-parada">
+                <h3>Llegada al Pazo</h3>
+                <p>Pazo Casa Grande, A Pobra de San Xiao</p>
+            </div>
         </div>
     </div>
+
     <div class="vuelta-bus">
-        <p><strong>Regreso:</strong> Habrá un turno de vuelta a Lugo a las <strong>04:00h</strong></p>
+        <p><strong>Regreso:</strong> Habrá un turno de vuelta a Lugo a las <strong>04:00h</p>
     </div>
 </section>
-
 <section id="info-extra">
     <h2>Información de Interés</h2>
+    
     <div class="info-flex-container">
         <div class="info-card">
             <h3>🏥 Alojamiento</h3>
-            <p>Se ha seleccionado el Hotel Mercure para vuestras reservas.</p>
-        </div>
+            <p>Para vuestra comodidad, se ha seleccionado el Hotel Mercure para realizar vuestras reservas.</p>
+            </div>
+
         <div class="info-card">
             <h3>🌿 Guía de Lugo</h3>
-            <p>Nuestros rincones favoritos: Muralla Romana y mejores tapeos.</p>
+            <p>Nuestros rincones favoritos: desde la Muralla Romana hasta los mejores sitios de tapeo.</p>
             <a href="guia-lugo.pdf" target="_blank" class="btn-descarga">Descargar PDF</a>
         </div>
     </div>
 </section>
 
-<footer><p>Hecho con ❤️ para nuestros invitados</p></footer>
-
-<script>
+    <footer>
+        <p>Hecho con ❤️ para nuestros invitados</p>
+    </footer>
+	<script>
 document.addEventListener('DOMContentLoaded', function() {
-    // 1. Reloj de Cuenta Regresiva
+    // Definimos la fecha exacta con el desfase horario de España en junio (UTC+2)
     const weddingDay = new Date("2026-06-20T17:30:00+02:00").getTime();
-    const updateTimer = () => {
+
+    function updateTimer() {
         const now = new Date().getTime();
         const diff = weddingDay - now;
+
         if (diff > 0) {
-            document.getElementById("dias").textContent = Math.floor(diff / (1000 * 60 * 60 * 24));
-            document.getElementById("horas").textContent = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById("minutos").textContent = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            document.getElementById("segundos").textContent = Math.floor((diff % (1000 * 60)) / 1000);
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+            const diasEl = document.getElementById("dias");
+            const horasEl = document.getElementById("horas");
+            const minutosEl = document.getElementById("minutos");
+            const segundosEl = document.getElementById("segundos");
+
+            if(diasEl) diasEl.textContent = d;
+            if(horasEl) horasEl.textContent = h;
+            if(minutosEl) minutosEl.textContent = m;
+            if(segundosEl) segundosEl.textContent = s;
+        } else {
+            clearInterval(timerInterval);
+            const reloj = document.getElementById("reloj");
+            if(reloj) reloj.innerHTML = "<p class='fuente-elegante' style='color:#8fa38f; font-size:2.5rem;'>¡Llegó el momento!</p>";
         }
-    };
-    setInterval(updateTimer, 1000); updateTimer();
+    }
 
-    // 2. Control de Intro Video
-    const intro = document.getElementById('intro-video-container');
-    const closeIntro = () => {
+    updateTimer();
+    const timerInterval = setInterval(updateTimer, 1000);
+});
+// Lógica para la pantalla de bienvenida
+const intro = document.getElementById('intro-video-container');
+const video = document.getElementById('video-bienvenida');
+const body = document.body;
+
+// Bloqueamos el scroll al inicio
+body.classList.add('no-scroll');
+
+// Opción A: Desaparecer cuando el vídeo termine
+video.onended = function() {
+    intro.classList.add('hidden-intro');
+    body.classList.remove('no-scroll');
+};
+
+// Opción B: Desaparecer tras un tiempo fijo (ej: 4 segundos) por seguridad
+setTimeout(() => {
+    if (!intro.classList.contains('hidden-intro')) {
         intro.classList.add('hidden-intro');
-        document.body.classList.remove('no-scroll');
-    };
-    document.getElementById('video-bienvenida').onended = closeIntro;
-    setTimeout(closeIntro, 4000);
+        body.classList.remove('no-scroll');
+    }
+}, 4000);
 
-    // 3. Inicializar Galería
-    window.fotosGaleria = Array.from(document.querySelectorAll('.foto-click'));
+let fotosGaleria = [];
+let indiceActual = 0;
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Guardamos todas las imágenes de la galería en un array al cargar la página
+    fotosGaleria = Array.from(document.querySelectorAll('.foto-click'));
 });
 
-let indiceActual = 0;
-function ampliarImagen(el) {
-    indiceActual = window.fotosGaleria.indexOf(el);
-    document.getElementById("img-ampliada").src = el.src;
-    document.getElementById("modal-visor").style.display = "flex";
-}
-function cerrarModal() { document.getElementById("modal-visor").style.display = "none"; }
-function cambiarFoto(dir) {
-    indiceActual = (indiceActual + dir + window.fotosGaleria.length) % window.fotosGaleria.length;
-    document.getElementById("img-ampliada").src = window.fotosGaleria[indiceActual].src;
+function ampliarImagen(elemento) {
+    const modal = document.getElementById("modal-visor");
+    const imgModal = document.getElementById("img-ampliada");
+    
+    // Encontramos el índice de la foto pinchada
+    indiceActual = fotosGaleria.indexOf(elemento);
+    
+    modal.style.display = "flex";
+    imgModal.src = elemento.src;
 }
 
-// Atajos de teclado y clics externos
-document.addEventListener('keydown', e => {
+function cerrarModal() {
+    document.getElementById("modal-visor").style.display = "none";
+}
+
+function cambiarFoto(direccion) {
+    indiceActual += direccion;
+
+    // Si llegamos al final, volvemos al principio (bucle)
+    if (indiceActual >= fotosGaleria.length) indiceActual = 0;
+    // Si vamos hacia atrás desde la primera, vamos a la última
+    if (indiceActual < 0) indiceActual = fotosGaleria.length - 1;
+
+    const nuevaImagen = fotosGaleria[indiceActual];
+    document.getElementById("img-ampliada").src = nuevaImagen.src;
+}
+
+// Extra: Cerrar al hacer clic fuera de la foto o con la tecla ESC
+window.onclick = function(event) {
+    const modal = document.getElementById("modal-visor");
+    if (event.target == modal) cerrarModal();
+}
+
+document.addEventListener('keydown', (e) => {
     if (e.key === "ArrowLeft") cambiarFoto(-1);
     if (e.key === "ArrowRight") cambiarFoto(1);
     if (e.key === "Escape") cerrarModal();
 });
-window.onclick = e => { if (e.target.id === "modal-visor") cerrarModal(); };
 </script>
+
+
 </body>
 </html>
