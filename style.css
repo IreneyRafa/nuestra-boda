@@ -648,79 +648,73 @@ html {
     .navbar { gap: 10px; padding: 10px; }
     .navbar a { font-size: 0.75rem; }
 }
-/* --- ITINERARIO DEFINITIVO: UNIÓN MATEMÁTICA --- */
+/* --- ITINERARIO COMPACTO --- */
 #itinerario-evento {
     background-color: #ffffff;
-    padding: 80px 20px;
+    padding: 40px 20px; /* Reducido de 80px a 40px */
 }
 
 .linea-tiempo {
     position: relative;
-    max-width: 500px;
-    margin: 40px auto;
-    /* El padding-left debe ser suficiente para que el icono (40px) esté cómodo */
+    max-width: 450px;
+    margin: 20px auto; /* Reducido de 40px a 20px */
     padding-left: 50px; 
 }
 
-/* 1. LA LÍNEA: Ahora es una sola, pero usamos un truco de gradiente para que se corte */
+/* La Línea: Ajustamos top y bottom para que mueran en los centros */
 .linea-tiempo::before {
     content: '';
     position: absolute;
-    /* Centramos la línea exactamente en el eje del icono */
-    /* El icono está a left:0 del contenedor (tras el padding), así que la línea va a 20px */
     left: 19px; 
-    top: 20px;    /* Empieza en el centro del primer icono (🥂) */
-    bottom: 20px; /* Acaba en el centro del último icono (💃) */
+    top: 15px;    
+    bottom: 15px; 
     width: 2px;
-    background: #8fa38f; /* Tu verde eucalipto */
+    background: #8fa38f; 
     z-index: 1;
 }
 
 .evento {
     position: relative;
-    margin-bottom: 60px;
+    margin-bottom: 30px; /* Reducido a la mitad (era 60px) */
     text-align: left;
     display: flex;
     align-items: center;
-    z-index: 2; /* Para que el icono esté sobre la línea */
+    z-index: 2;
 }
 
 .evento:last-child {
-    margin-bottom: 0; /* El último no necesita espacio abajo */
+    margin-bottom: 0;
 }
 
-/* 2. EL ICONO: Posicionado de forma que su centro sea el eje de la línea */
 .evento .icono {
     position: absolute;
-    /* Movemos el icono a la izquierda para que su centro (20px) coincida con la línea */
     left: -51px; 
-    background: #ffffff; /* El fondo blanco oculta la línea que pasa por debajo */
-    width: 40px;
-    height: 40px;
+    background: #ffffff;
+    width: 36px;  /* Ligeramente más pequeños para compactar */
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     border: 2px solid #8fa38f;
     border-radius: 50%;
 }
 
-/* 3. TEXTOS */
 .detalle-evento {
-    padding-left: 10px;
+    padding-left: 5px;
 }
 
 .detalle-evento h3 {
     font-family: 'Playfair Display', serif;
     color: #333;
-    font-size: 1.4rem;
+    font-size: 1.2rem; /* Un poco más pequeño */
     margin: 0;
 }
 
 .detalle-evento p {
     color: #666;
-    font-size: 0.95rem;
-    margin: 4px 0 0 0;
+    font-size: 0.9rem;
+    margin: 0; /* Eliminado el margen superior del texto */
 }
 /* --- ESTILO PARA FECHA Y HORA EN DETALLES --- */
 .fecha-hora-contenedor {
