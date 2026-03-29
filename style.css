@@ -847,3 +847,44 @@ html {
 #bus .detalle-evento h3 {
     font-size: 1.1rem;
 }
+/* --- ESTILO CALENDARIO INTERACTIVO --- */
+.enlace-calendario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-decoration: none; /* Quita el subrayado */
+    color: #333;           /* Color de tu texto normal */
+    background-color: rgba(143, 163, 143, 0.05); /* Fondo verde casi invisible */
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 1px dashed #8fa38f; /* Borde punteado elegante */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.enlace-calendario:hover {
+    background-color: rgba(143, 163, 143, 0.15);
+    transform: scale(1.02); /* Efecto sutil al pulsar */
+}
+
+.enlace-calendario span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 400;
+}
+
+.enlace-calendario .separador {
+    color: #8fa38f;
+    font-weight: bold;
+    opacity: 0.6;
+}
+
+/* Ajuste para que en móvil no se vea muy grande */
+@media (max-width: 480px) {
+    .enlace-calendario {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+}
