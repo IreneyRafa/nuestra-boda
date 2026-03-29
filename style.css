@@ -597,22 +597,25 @@ html {
     line-height: 1.6;
     margin-bottom: 20px;
 }
-
-/* --- BOTÓN DE DESCARGA (Verde Eucalipto) --- */
+/* --- BOTONES DE ACCIÓN (Verde Eucalipto) --- */
 .btn-descarga {
     display: inline-block;
     padding: 12px 24px;
-    background-color: #445c4d; /* Verde Eucalipto */
+    background-color: #8fa38f; /* Color eucalipto actualizado */
     color: white;
     text-decoration: none;
-    border-radius: 25px; /* Bordes redondeados */
+    border-radius: 25px;
     font-weight: bold;
     font-size: 0.95rem;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
 }
 
 .btn-descarga:hover {
-    background-color: #5a7a66; /* Un verde un poco más claro al pasar el ratón */
+    background-color: #7a8e7a; /* Un tono ligeramente más oscuro al pasar el ratón */
+    transform: translateY(-2px); /* Pequeña elevación */
+    box-shadow: 0 4px 10px rgba(143, 163, 143, 0.3);
 }
 .navbar {
     position: sticky;
@@ -632,4 +635,76 @@ html {
     font-weight: bold;
     font-size: 0.9rem;
     text-transform: uppercase;
+}
+.hero-container::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Oscurece la foto un 20% */
+    z-index: 2;
+}
+@media (max-width: 600px) {
+    .navbar { gap: 10px; padding: 10px; }
+    .navbar a { font-size: 0.75rem; }
+}
+#itinerario-evento {
+    background-color: #ffffff;
+    padding: 80px 20px;
+}
+
+.linea-tiempo {
+    position: relative;
+    max-width: 500px;
+    margin: 40px auto;
+    padding-left: 40px;
+}
+
+/* La línea vertical verde eucalipto */
+.linea-tiempo::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #8fa38f; /* Tu color eucalipto */
+}
+
+.evento {
+    position: relative;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.evento .icono {
+    position: absolute;
+    left: -44px;
+    background: #fdfdfd;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    border: 2px solid #8fa38f;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.detalle-evento h3 {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.detalle-evento p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Último evento sin margen inferior */
+.evento:last-child {
+    margin-bottom: 0;
 }
