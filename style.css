@@ -847,50 +847,55 @@ html {
 #bus .detalle-evento h3 {
     font-size: 1.1rem;
 }
-/* --- BOTÓN CALENDARIO (ESTILO GUÍA/HOTEL) --- */
+/* --- ESTILO DE BOTÓN SÓLIDO PARA FECHA/HORA (COMO GUÍA/HOTEL) --- */
+
 .fecha-hora-contenedor {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    align-items: center;
+    margin-top: 25px; /* Separación del texto de ubicación */
 }
 
-.boton-calendario {
+.boton-boda {
     background-color: #8fa38f; /* Tu verde eucalipto */
-    color: #ffffff !important;  /* Texto en blanco */
-    padding: 12px 25px;
-    border-radius: 25px;       /* Esquinas redondeadas como tus otros botones */
-    text-decoration: none;
-    font-size: 1rem;
+    color: #ffffff !important;  /* Forzamos el texto blanco */
+    padding: 12px 25px;       /* Un poco de aire como los otros botones */
+    border-radius: 25px;       /* Esquinas redondeadas */
+    text-decoration: none;    /* Quita el subrayado azul */
+    font-size: 1.05rem;
+    font-weight: 500;
     display: inline-flex;
     align-items: center;
-    gap: 15px;
+    gap: 15px;                 /* Espacio entre fecha y hora */
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Sombra suave */
     border: none;
     cursor: pointer;
 }
 
-.boton-calendario:hover {
+.boton-boda:hover {
     background-color: #7a8e7a; /* Un tono un poco más oscuro al pasar el ratón */
-    transform: translateY(-2px);
+    transform: translateY(-2px); /* Efecto de subida sutil */
     color: #ffffff;
 }
 
-.boton-calendario span {
+.boton-boda span {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 8px; /* Espacio entre el icono y el texto */
 }
 
-.boton-calendario .separador {
+/* El separador | también en blanco */
+.boton-boda .separador {
+    color: #ffffff;
     opacity: 0.5;
     font-weight: 300;
 }
 
-/* Ajuste para móviles: mantenemos todo en una línea para que no pierda forma de botón */
+/* Ajuste para que en móvil no se vea muy grande */
 @media (max-width: 480px) {
-    .boton-calendario {
-        font-size: 0.85rem;
+    .boton-boda {
+        font-size: 0.9rem;
         padding: 10px 18px;
         gap: 10px;
     }
