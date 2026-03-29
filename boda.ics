@@ -9,10 +9,10 @@ DTSTAMP:20260329T220000Z
 DTSTART:20260620T153000Z
 DTEND:20260621T020000Z
 SUMMARY:Boda Irene & Rafa 💍
-DESCRIPTION:¡Nos casamos! Pulsa para ver el mapa: https://maps.apple.com/?q=42.86258,-7.44445
-LOCATION:Pazo Casa Grande, Rúa Benigno Quiroga 89, 27360 Láncara, Lugo, España
+DESCRIPTION:¡Nos casamos! \n\n📍 Ver mapa: https://www.google.com/maps/search/?api=1&query=42.86258,-7.44445 \n\nConfirmad asistencia en la web.
+LOCATION:Rúa Benigno Quiroga 89, 27360 Láncara, Lugo
 GEO:42.86258;-7.44445
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Pazo Casa Grande, Rúa Benigno Quiroga 89, 27360 Láncara, Lugo, España";X-APPLE-RADIUS=72;X-TITLE="Pazo Casa Grande":geo:42.86258,-7.44445
+URL;VALUE=URI:https://www.google.com/maps/search/?api=1&query=42.86258,-7.44445
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:¡Es hoy! Boda Irene & Rafa
