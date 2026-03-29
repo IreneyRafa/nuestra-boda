@@ -743,36 +743,55 @@ html {
     font-size: 0.9rem;
     margin: 0; /* Eliminado el margen superior del texto */
 }
-/* --- ESTILO PARA FECHA Y HORA EN DETALLES --- */
+/* --- SECCIÓN DETALLES COMPACTA --- */
+#detalles {
+    padding: 40px 20px; /* Reducido para que no ocupe tanto */
+}
+
+#detalles h2 {
+    margin-bottom: 10px;
+}
+
+#detalles p {
+    margin-bottom: 5px;
+}
+
+/* Forzar fecha y hora en una sola línea siempre */
 .fecha-hora-contenedor {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
-    margin-top: 15px;
-    font-size: 1.1rem;
-    color: #333;
-}
-
-.fecha-hora-contenedor span {
-    display: flex;
-    align-items: center;
-    gap: 8px; /* Espacio entre el emoji y el texto */
+    gap: 10px;        /* Espacio reducido entre elementos */
+    margin: 15px 0;
+    font-size: 0.95rem; /* Un pelín más pequeño para que quepa en móviles */
+    white-space: nowrap; /* Evita que el texto salte de línea */
 }
 
 .separador {
-    color: #8fa38f; /* Tu verde eucalipto */
-    font-weight: 300;
-    opacity: 0.5;
+    color: #8fa38f;
+    font-weight: bold;
 }
 
-/* Ajuste para móviles */
-@media (max-width: 480px) {
+/* --- MAPA MÁS PEQUEÑO --- */
+.mapa-contenedor {
+    max-width: 600px;  /* Limitamos el ancho máximo del mapa */
+    margin: 20px auto 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.mapa-contenedor iframe {
+    width: 100%;
+    height: 300px;     /* Altura reducida (antes solía ser 450px) */
+    border: 0;
+    display: block;
+}
+
+/* AJUSTE ESPECÍFICO PARA MÓVILES MUY PEQUEÑOS */
+@media (max-width: 400px) {
     .fecha-hora-contenedor {
-        flex-direction: column;
+        font-size: 0.85rem; /* Si el móvil es muy estrecho, bajamos un poco la letra */
         gap: 5px;
-    }
-    .separador {
-        display: none; 
     }
 }
