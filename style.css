@@ -90,10 +90,22 @@ section {
 }
 
 h2 {
-    font-family: 'Alex Brush', cursive;
-    font-size: 3.5rem;
-    color: #8fa38f;
-    margin-bottom: 25px;
+    font-family: 'Playfair Display', serif;
+    color: #8fa38f; /* Tu verde eucalipto */
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem; /* Tamaño base */
+}
+
+/* Regla para móviles: Ajuste automático de títulos */
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.4rem;      /* Reducimos un poco el tamaño */
+        white-space: nowrap;    /* Prohibimos que salte de línea */
+        letter-spacing: -0.5px; /* Juntamos un poco las letras si es necesario */
+        overflow: hidden;
+        text-overflow: ellipsis; /* Por seguridad, si no cupiera, pondría puntos suspensivos */
+    }
 }
 
 /* 5. MAPA Y DETALLES */
@@ -396,8 +408,31 @@ html {
 }
 /* SECCIÓN GALERÍA NUEVA */
 #galeria-pazo {
-    background-color: #ffffff;
-    padding: 80px 20px;
+    padding: 30px 15px; /* Reducimos el aire arriba y abajo */
+    background-color: #fdfdfd;
+}
+
+#galeria-pazo p {
+    max-width: 600px;
+    margin: 0 auto 20px; /* Menos margen inferior */
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Cuadrícula de fotos más compacta */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Columnas más estrechas */
+    gap: 10px; /* Menos espacio entre fotos */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.galeria-grid img {
+    width: 100%;
+    height: 120px; /* Altura fija reducida para compactar visualmente */
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 .contenedor-galeria {
