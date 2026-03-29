@@ -830,3 +830,20 @@ html {
         gap: 5px;
     }
 }
+/* 3. Compactar sección Autobús (sin tocar la línea vertical) */
+#bus {
+    padding: 30px 20px;
+}
+
+#bus .evento {
+    margin-bottom: 25px; /* Menos espacio entre paradas */
+}
+
+#bus .detalle-evento p {
+    font-size: 0.9rem;
+    margin-top: 2px;
+}
+
+#bus .detalle-evento h3 {
+    font-size: 1.1rem;
+}
