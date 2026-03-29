@@ -722,3 +722,36 @@ html {
     font-size: 0.95rem;
     margin: 4px 0 0 0;
 }
+/* --- ESTILO PARA FECHA Y HORA EN DETALLES --- */
+.fecha-hora-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.fecha-hora-contenedor span {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre el emoji y el texto */
+}
+
+.separador {
+    color: #8fa38f; /* Tu verde eucalipto */
+    font-weight: 300;
+    opacity: 0.5;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 480px) {
+    .fecha-hora-contenedor {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .separador {
+        display: none; 
+    }
+}
