@@ -648,7 +648,7 @@ html {
     .navbar { gap: 10px; padding: 10px; }
     .navbar a { font-size: 0.75rem; }
 }
-/* --- ITINERARIO LIMPIO --- */
+//* --- ITINERARIO CON UNIÓN PERFECTA --- */
 #itinerario-evento {
     background-color: #ffffff;
     padding: 80px 20px;
@@ -658,44 +658,43 @@ html {
     position: relative;
     max-width: 500px;
     margin: 40px auto;
-    padding-left: 45px; /* Espacio para los iconos a la izquierda */
+    padding-left: 60px; /* Aumentamos el margen para que quepan bien los iconos */
 }
 
-/* 1. Eliminamos la línea global que bajaba de más */
-.linea-tiempo::before {
-    display: none;
-}
-
+/* 1. Aseguramos que el contenedor de cada evento sea el punto de referencia */
 .evento {
     position: relative;
-    margin-bottom: 50px; /* Un poco más de aire entre hitos */
+    margin-bottom: 60px; /* Más espacio para que la línea se vea mejor */
     text-align: left;
+    min-height: 40px;
     display: flex;
     align-items: center;
 }
 
-/* 2. La línea ahora une un icono con el siguiente */
+/* 2. La línea: Ajuste de posición exacto */
 .evento::before {
     content: '';
     position: absolute;
-    left: -25px;    /* Centrado bajo el icono */
-    top: 40px;      /* Empieza donde acaba el círculo del icono */
-    bottom: -50px;  /* Se estira hasta el siguiente evento */
+    /* Mitad del icono (20px) - Mitad del ancho de la línea (1px) = -26px aprox desde el borde del texto */
+    /* Pero mejor usamos una referencia fija desde la izquierda del contenedor: */
+    left: -39px; 
+    top: 40px;      /* Empieza justo donde acaba el círculo del icono */
+    bottom: -60px;  /* Se estira hasta el siguiente evento (debe coincidir con margin-bottom) */
     width: 2px;
-    background: #8fa38f; /* Tu verde eucalipto */
+    background: #8fa38f;
     z-index: 1;
 }
 
-/* 3. El último evento (Fiesta 💃) ya no proyecta línea hacia abajo */
+/* 3. El último evento no tiene línea */
 .evento:last-child::before {
     display: none;
 }
 
-/* 4. Estilo del Icono */
+/* 4. El Icono: Centrado con la línea */
 .evento .icono {
     position: absolute;
-    left: -45px;
-    background: #ffffff; /* Fondo blanco para "tapar" la línea que viene de arriba */
+    left: -58px; /* Ajustado para que su centro coincida con la línea (left -39px de la línea) */
+    background: #ffffff;
     width: 40px;
     height: 40px;
     display: flex;
@@ -704,21 +703,18 @@ html {
     font-size: 1.2rem;
     border: 2px solid #8fa38f;
     border-radius: 50%;
-    z-index: 2; /* Por encima de la línea */
-}
-
-.detalle-evento {
-    padding-left: 10px;
+    z-index: 2;
 }
 
 .detalle-evento h3 {
     font-family: 'Playfair Display', serif;
     color: #333;
     font-size: 1.3rem;
-    margin-bottom: 2px;
+    margin: 0;
 }
 
 .detalle-evento p {
     color: #666;
     font-size: 0.95rem;
+    margin: 2px 0 0 0;
 }
