@@ -847,44 +847,51 @@ html {
 #bus .detalle-evento h3 {
     font-size: 1.1rem;
 }
-/* --- ESTILO CALENDARIO INTERACTIVO --- */
-.enlace-calendario {
+/* --- BOTÓN CALENDARIO (ESTILO GUÍA/HOTEL) --- */
+.fecha-hora-contenedor {
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 12px;
-    text-decoration: none; /* Quita el subrayado */
-    color: #333;           /* Color de tu texto normal */
-    background-color: rgba(143, 163, 143, 0.05); /* Fondo verde casi invisible */
-    padding: 10px 20px;
-    border-radius: 30px;
-    border: 1px dashed #8fa38f; /* Borde punteado elegante */
-    transition: all 0.3s ease;
+    margin: 20px 0;
+}
+
+.boton-calendario {
+    background-color: #8fa38f; /* Tu verde eucalipto */
+    color: #ffffff !important;  /* Texto en blanco */
+    padding: 12px 25px;
+    border-radius: 25px;       /* Esquinas redondeadas como tus otros botones */
+    text-decoration: none;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: none;
     cursor: pointer;
 }
 
-.enlace-calendario:hover {
-    background-color: rgba(143, 163, 143, 0.15);
-    transform: scale(1.02); /* Efecto sutil al pulsar */
+.boton-calendario:hover {
+    background-color: #7a8e7a; /* Un tono un poco más oscuro al pasar el ratón */
+    transform: translateY(-2px);
+    color: #ffffff;
 }
 
-.enlace-calendario span {
+.boton-calendario span {
     display: flex;
     align-items: center;
-    gap: 5px;
-    font-weight: 400;
+    gap: 8px;
 }
 
-.enlace-calendario .separador {
-    color: #8fa38f;
-    font-weight: bold;
-    opacity: 0.6;
+.boton-calendario .separador {
+    opacity: 0.5;
+    font-weight: 300;
 }
 
-/* Ajuste para que en móvil no se vea muy grande */
+/* Ajuste para móviles: mantenemos todo en una línea para que no pierda forma de botón */
 @media (max-width: 480px) {
-    .enlace-calendario {
-        font-size: 0.9rem;
-        padding: 8px 15px;
+    .boton-calendario {
+        font-size: 0.85rem;
+        padding: 10px 18px;
+        gap: 10px;
     }
 }
