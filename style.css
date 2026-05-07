@@ -857,3 +857,9 @@ html {
         gap: 10px;
     }
 }
+.info-parada h3 {
+    color: #8fa38f; /* Tu verde eucalipto */
+    font-family: 'Playfair Display', serif; /* Mantener la elegancia del resto de la web */
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
